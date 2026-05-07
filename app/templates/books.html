@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header">
+    <div>
+        <h1>Books Management</h1>
+        <p>Search, view, and manage all books in the library collection.</p>
+    </div>
+    <a href="/books/add" class="btn-primary">+ Add New Book</a>
+</section>
+
+<section class="search-box">
+    <form method="GET" action="/books">
+        <input type="text" name="q" placeholder="Search by title or author...">
+        <button type="submit">Search</button>
+    </form>
+</section>
+
+<section class="table-card">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>Language</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.publication_year }}</td>
+                <td>{{ book.language }}</td>
+                <td>{{ book.category }}</td>
+                <td>
+                    {% if book.status == "Available" %}
+                        <span class="status available">Available</span>
+                    {% else %}
+                        <span class="status checked">Checked Out</span>
+                    {% endif %}
+                </td>
+
+                <td>
+    <a href="/books/edit/{{ book.id }}" class="small-btn">Edit</a>
+    <a href="/books/delete/{{ book.id }}" class="small-btn delete-btn">Delete</a>
+
+    {% if book.status == "Available" %}
+        <a href="/books/toggle/{{ book.id }}" class="small-btn">Checkout</a>
+    {% else %}
+        <a href="/books/toggle/{{ book.id }}" class="small-btn">Return</a>
+    {% endif %}
+</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="7">No books added yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}
