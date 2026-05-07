@@ -1,39 +1,50 @@
-# Library Management System (Flask)
+# Library Management System - DevOps Project
 
-A modern and user-friendly web-based library management system built using Flask.
+## Project Overview
 
-## Features
+This is an individual DevOps project based on a Flask Library Management System.  
+The project demonstrates the main stages of a DevOps workflow, including application development, version control, containerization, CI/CD pipeline, testing, and Infrastructure as Code.
 
-- Add and manage books
-- Search books
-- View book availability
-- Modern responsive UI
-- SQLite database integration
+## Application Description
 
-## Technologies Used
+The application is a simple Library Management System built with Python Flask.  
+It allows users to manage library activities such as books, members, checkout, and history.  
+The application has a login page and a dashboard-based interface.
 
-- Python (Flask)
-- HTML, CSS, JavaScript
+## Tools Used
+
+- Python
+- Flask
 - SQLite
-- SQLAlchemy
+- Git
+- GitHub
+- Docker
+- GitHub Actions
+- Terraform
+- Pytest
 
-## Team Members
+## DevOps Workflow
 
-- Hafsa Langari – Project Lead & Backend Development
-- Hafizullah Khplwak – Database Design
-- Mufeedullah Mamozai – UI/UX Design
-- Sapida Muska Masood – Testing & Documentation
+### 1. Application Development
 
-## How to Run
+The application was developed using Flask.  
+It includes routes, templates, static files, database models, and basic functionality.
 
-1. Clone the repository
-2. Create virtual environment:
-## Project Highlights
+### 2. Version Control
 
-- Fully functional CRUD system
-- Secure login authentication
-- Book checkout and return system
-- Search functionality
-- History tracking (basic)
-- Modern UI design
-- Organized GitHub workflow with branches
+Git was used for version control.  
+The project includes two branches:
+
+- main
+- dev
+
+Development work was completed on the dev branch and later merged into main.
+
+### 3. Containerization
+
+Docker was used to containerize the Flask application.
+
+Build Docker image:
+
+```bash
+docker build -t library-devops-app .
