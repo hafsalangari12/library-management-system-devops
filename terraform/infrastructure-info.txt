@@ -1,0 +1,9 @@
+Library Management System - DevOps Infrastructure Simulation
+
+Application Name: Library Management System
+Environment: Local Development
+Container Tool: Docker
+CI/CD Tool: GitHub Actions
+Infrastructure Tool: Terraform
+
+This file is created by Terraform to simulate infrastructure setup for the DevOps project.
